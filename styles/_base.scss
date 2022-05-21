@@ -1,0 +1,45 @@
+/* ----- Default Styles ----- */
+
+:root {
+  --body-bg-color: #fdfcfd;
+  --text-color: #1a1523;
+  --bg-cards: #f4f2f4;
+  --bg-techs: #CB92B1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg-color: #22212C;
+    --text-color: #837E9F;
+    --bg-cards: #302F3D;
+    --bg-techs: #CB92B1;
+  }
+}
+
+html {
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: 'Merriweather Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ----- Metrics ----- */
+
+$defaultRadius: 20px;
+$defaultSpacing: 20px;
+
+/* ----- Mixins ----- */
+
+@mixin card {
+  background-color: var(--bg-cards);
+  padding: $defaultSpacing;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: $defaultRadius;
+}
