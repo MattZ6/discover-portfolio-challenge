@@ -20,7 +20,7 @@
   ],
   "start_url": "./?utm_source=web_app_manifest",
   "display": "standalone",
-  "background_color": "#161618",
-  "theme_color": "#161618",
+  "background_color": "hsl(246, 6.0%, 9.0%)",
+  "theme_color": "hsl(246, 6.0%, 9.0%)",
   "orientation": "portrait"
 }
