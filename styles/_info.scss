@@ -13,8 +13,8 @@
 
     padding: $defaultSpacing / 2 $defaultSpacing * 2;
 
-    color: var(--text-color);
-    stroke: var(--text-color);
+    color: var(--high-contrast);
+    stroke: var(--low-contrast);
 
     > svg {
       width: 24px;
@@ -30,11 +30,11 @@
 
       &:hover,
       &:focus {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--element-hover)
       }
 
       &:focus-visible {
-        outline-color: var(--text-color);
+        outline-color: var(--element-hover-border);
       }
     }
   }

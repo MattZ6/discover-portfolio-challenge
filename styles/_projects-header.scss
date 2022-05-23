@@ -28,20 +28,21 @@
 
     font-size: 14px;
     line-height: 24px;
-    color: var(--text-color);
+    color: var(--low-contrast);
     text-decoration: none;
 
     outline: 2px solid transparent;
 
-    transition: background-color 150ms ease-out, outline-color 150ms ease-out;
+    transition: background-color 150ms ease-out, color 150ms ease-out, outline-color 150ms ease-out;
 
     &:hover,
     &:focus {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: var(--element-hover);
+      color: var(--high-contrast);
     }
 
     &:focus-visible {
-      outline-color: var(--text-color);
+      outline-color: var(--element-hover-border);
     }
   }
 }

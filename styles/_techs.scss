@@ -28,13 +28,13 @@
 
       padding: 0 $defaultSpacing / 2;
       border-radius: 24px;
-      background-color: var(--bg-techs);
+      background-color: var(--brand-solid);
 
       font-size: 12px;
       line-height: 24px;
       height: 24px;
       font-weight: 700;
-      color: var(--text-techs);
+      color: var(--brand-high-contrast);
     }
   }
 }

@@ -10,15 +10,32 @@
 @import "posts-header";
 
 body {
-  display: flex;
-  flex-direction: column;
-  gap: $defaultSpacing;
+  width: 100%;
+  max-width: $extraLargeScreen;
+  margin: 0 auto;
 
-  padding: $defaultSpacing;
+  @media screen and (max-width: $extraLargeScreen) {
+    max-width: $largeScreen;
+  }
+
+  @media screen and (max-width: $largeScreen) {
+    max-width: $mediumScreen;
+  }
+
+  @media screen and (max-width: $mediumScreen) {
+    max-width: $smallScreen;
+  }
 
   > main {
     display: flex;
     gap: $defaultSpacing * 2;
+
+    padding: $defaultSpacing;
+
+    @media screen and (max-width: $mediumScreen) {
+      flex-direction: column;
+      gap: $defaultSpacing;
+    }
 
     > aside {
       display: flex;
@@ -26,6 +43,11 @@ body {
       gap: $defaultSpacing * 1.5;
 
       width: 348px;
+
+      @media screen and (max-width: $mediumScreen) {
+        width: unset;
+        gap: $defaultSpacing;
+      }
     }
 
     > section {
@@ -33,10 +55,14 @@ body {
       display: flex;
       flex-direction: column;
       gap: $defaultSpacing * 1.5;
+
+      @media screen and (max-width: $mediumScreen) {
+        gap: $defaultSpacing;
+      }
     }
   }
 
-  footer {
+  > footer {
     align-self: center;
 
     text-align: center;
@@ -44,23 +70,31 @@ body {
     font-size: 14px;
     line-height: 24px;
 
+    color: var(--low-contrast);
+
+    padding: $defaultSpacing 0;
+
     > a {
       text-decoration: none;
-      color: var(--text-color);
 
-      padding: 4px 0;
+      padding: 4px;
       border-radius: 4px;
+
+      color: var(--low-contrast);
+      font-weight: 500;
 
       outline: 2px solid transparent;
 
-      transition: color 150ms ease-out, outline-color 150ms ease-out;
+      transition: background-color 150ms ease-out, color 150ms ease-out, outline-color 150ms ease-out;
 
-      &:hover {
-        color: var(--link-hover);
+      &:hover,
+      &:focus {
+        background-color: var(--element-hover);
+        color: var(--high-contrast);
       }
 
       &:focus-visible {
-        outline-color: var(--text-color);
+        outline-color: var(--element-hover-border);
       }
     }
   }

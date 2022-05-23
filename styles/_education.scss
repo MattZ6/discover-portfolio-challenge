@@ -26,6 +26,8 @@
     > li {
       margin-left: $defaultSpacing / 2;
 
+      color: var(--low-contrast);
+
       > strong {
         font-size: 14px;
         line-height: 20px;

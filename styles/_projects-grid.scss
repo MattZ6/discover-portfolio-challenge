@@ -3,6 +3,10 @@
   grid-template-columns: repeat(2, 1fr);
   gap: $defaultSpacing;
 
+  @media screen and (max-width: $largeScreen) {
+    grid-template-columns: 1fr;
+  }
+
   > a {
     @include card;
 
@@ -17,12 +21,12 @@
     &:hover,
     &:focus {
       > div {
-        background-color: rgba(0, 0, 0, 0.08);
+        background-color: var(--element-hover)
       }
     }
 
     &:focus-visible {
-      outline-color: var(--text-color);
+      outline-color: var(--element-hover-border);
     }
 
     > div {
@@ -33,8 +37,10 @@
 
       padding: $defaultSpacing * 1.5;
 
-      color: var(--text-color);
-      stroke: var(--text-color);
+      color: var(--high-contrast);
+      stroke: var(--high-contrast);
+
+      border-radius: inherit;
 
       transition: background-color 150ms ease-out;
 
@@ -54,6 +60,8 @@
         font-size: 14px;
         line-height: 20px;
         font-weight: 400;
+
+        color: var(--low-contrast);
       }
 
       > footer {
@@ -62,6 +70,9 @@
         align-items: center;
         justify-content: space-between;
         gap: $defaultSpacing;
+
+        color: var(--low-contrast);
+        stroke: var(--low-contrast);
 
         > .info {
           display: flex;
@@ -92,7 +103,7 @@
             width: $size;
             height: $size;
             border-radius: $size;
-            border: 2px solid var(--text-color);
+            border: 2px solid var(--low-contrast);
 
             &.typescript {
               background-color: #2b7489;
